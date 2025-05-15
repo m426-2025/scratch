@@ -3,11 +3,11 @@
 export function convert(chf: number, toCorrency: string): number {
   switch (toCorrency) {
     case "EUR":
-      return 1.06 * chf;
+      return 0.94 * chf;
     case "USD":
-      return 1.19 * chf;
+      return 0.84 * chf;
     case "GBP":
-      return 0.9 * chf;
+      return 1.11 * chf;
     default:
       throw new Error(`unsupported currency ${toCorrency}`);
   }
@@ -15,9 +15,9 @@ export function convert(chf: number, toCorrency: string): number {
 */
 
 const conversionRates: Map<string, number> = new Map([
-  ["EUR", 1.06],
-  ["USD", 1.19],
-  ["GBP", 0.9],
+  ["EUR", 0.94],
+  ["USD", 0.84],
+  ["GBP", 1.11],
 ]);
 
 export function convert(chf: number, toCorrency: string): number {
