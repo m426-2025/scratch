@@ -1,7 +1,7 @@
 // NOTE: code left in here for compoarison "before/after"
 /*
-export function convert(chf: number, toCorrency: string): number {
-  switch (toCorrency) {
+export function convert(chf: number, toCurrency: string): number {
+  switch (toCurrency) {
     case "EUR":
       return 0.94 * chf;
     case "USD":
@@ -9,7 +9,7 @@ export function convert(chf: number, toCorrency: string): number {
     case "GBP":
       return 1.11 * chf;
     default:
-      throw new Error(`unsupported currency ${toCorrency}`);
+      throw new Error(`unsupported currency ${toCurrency}`);
   }
 }
 */
@@ -20,9 +20,9 @@ const conversionRates: Map<string, number> = new Map([
   ["GBP", 1.11],
 ]);
 
-export function convert(chf: number, toCorrency: string): number {
-  if (conversionRates.has(toCorrency)) {
-    return chf * conversionRates.get(toCorrency);
+export function convertNew(chf: number, toCurrency: string): number {
+  if (conversionRates.has(toCurrency)) {
+    return chf * conversionRates.get(toCurrency);
   }
-  throw new Error(`unsupported currency ${toCorrency}`);
+  throw new Error(`unsupported currency ${toCurrency}`);
 }
